@@ -67,11 +67,7 @@ export default function Services() {
               <Reveal delay={0.1} className={i % 2 === 1 ? 'md:order-1' : ''}>
                 <div className="card glow-border relative flex aspect-[4/3] items-center justify-center overflow-hidden p-10">
                   <div
-                    className="pointer-events-none absolute inset-0 opacity-40"
-                    style={{
-                      background:
-                        'radial-gradient(circle at 30% 20%, rgba(10,247,235,0.18), transparent 60%)',
-                    }}
+                    className={`pointer-events-none absolute inset-0 opacity-40 ${i % 2 === 1 ? 'glow-panel-coral' : 'glow-panel'}`}
                   />
                   <service.icon size={96} className="relative text-accent/70" strokeWidth={1} />
                 </div>
@@ -84,10 +80,7 @@ export default function Services() {
       <section className="pb-24 md:pb-32">
         <div className="container-px">
           <Reveal className="relative overflow-hidden rounded-3xl border border-line bg-gradient-to-br from-surface to-ink-soft p-12 text-center md:p-20">
-            <div
-              className="pointer-events-none absolute inset-0 opacity-30 blur-3xl"
-              style={{ background: 'radial-gradient(circle at 50% 0%, #0af7eb, transparent 60%)' }}
-            />
+            <div className="glow-cta pointer-events-none absolute inset-0 opacity-30 blur-3xl" />
             <div className="relative">
               <h2 className="mx-auto max-w-2xl text-3xl font-medium text-fg md:text-5xl">
                 Not sure which service fits?

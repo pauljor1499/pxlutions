@@ -112,7 +112,7 @@ export default function About() {
           <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {team.map((member, i) => (
               <Reveal key={member.name} delay={i * 0.06} className="card p-7">
-                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-cyan/40 to-cyan/5 text-sm font-semibold text-fg">
+                <div className={`avatar-glow-${(i % 3) + 1} flex h-14 w-14 items-center justify-center rounded-full text-sm font-semibold text-fg`}>
                   {member.name
                     .split(' ')
                     .map((part) => part[0])
@@ -130,10 +130,7 @@ export default function About() {
       <section className="pb-24 md:pb-32">
         <div className="container-px">
           <Reveal className="relative overflow-hidden rounded-3xl border border-line bg-gradient-to-br from-surface to-ink-soft p-12 text-center md:p-20">
-            <div
-              className="pointer-events-none absolute inset-0 opacity-30 blur-3xl"
-              style={{ background: 'radial-gradient(circle at 50% 0%, #0af7eb, transparent 60%)' }}
-            />
+            <div className="glow-cta pointer-events-none absolute inset-0 opacity-30 blur-3xl" />
             <div className="relative">
               <h2 className="mx-auto max-w-2xl text-3xl font-medium text-fg md:text-5xl">
                 Want to work with a team like ours?

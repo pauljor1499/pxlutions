@@ -141,10 +141,7 @@ Where innovation turns <span className="text-gradient">pixels</span> into <span 
       <section className="py-6 md:py-10">
         <div className="container-px">
           <Reveal className="card glow-border relative overflow-hidden p-10 md:p-16">
-            <div
-              className="pointer-events-none absolute -top-20 right-0 h-64 w-64 rounded-full opacity-20 blur-[90px]"
-              style={{ background: 'radial-gradient(circle, #0af7eb, transparent 70%)' }}
-            />
+            <div className="glow-violet pointer-events-none absolute -top-20 right-0 h-64 w-64 rounded-full opacity-20 blur-[90px]" />
             <p className="relative max-w-3xl text-xl font-medium leading-relaxed text-fg md:text-2xl">
               "PXLutions rebuilt our platform from the ground up in three months. Deploys went
               from a weekly ritual of dread to something we barely think about anymore."
@@ -164,10 +161,7 @@ Where innovation turns <span className="text-gradient">pixels</span> into <span 
       <section className="py-24 md:py-32">
         <div className="container-px">
           <Reveal className="relative overflow-hidden rounded-3xl border border-line bg-gradient-to-br from-surface to-ink-soft p-12 text-center md:p-20">
-            <div
-              className="pointer-events-none absolute inset-0 opacity-30 blur-3xl"
-              style={{ background: 'radial-gradient(circle at 50% 0%, #0af7eb, transparent 60%)' }}
-            />
+            <div className="glow-cta pointer-events-none absolute inset-0 opacity-30 blur-3xl" />
             <div className="relative">
               <h2 className="mx-auto max-w-2xl text-3xl font-medium text-fg md:text-5xl">
                 Have a product in mind? Let's ship it.

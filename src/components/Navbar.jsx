@@ -41,8 +41,8 @@ export default function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled ? 'border-b border-line bg-ink/80 backdrop-blur-xl' : 'border-b border-transparent bg-transparent'
+      className={`sticky top-0 z-50 bg-ink/95 backdrop-blur-xl transition-all duration-300 ${
+        scrolled ? 'border-b border-line' : 'border-b border-transparent'
       }`}
     >
       <div className="container-px flex h-20 items-center justify-between py-4">
