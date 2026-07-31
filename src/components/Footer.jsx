@@ -45,8 +45,8 @@ export default function Footer() {
       <div className="container-px grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr]">
         <div className="flex flex-col gap-4">
           <Link to="/" className="flex items-center gap-2">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-line bg-surface text-sm font-bold text-accent">
-              PX
+            <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-line bg-surface text-xs font-bold text-accent">
+              PXL
             </span>
             <span className="font-display text-lg font-semibold text-fg">PXLutions</span>
           </Link>

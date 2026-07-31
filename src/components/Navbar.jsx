@@ -34,8 +34,8 @@ export default function Navbar() {
     >
       <div className="container-px flex h-20 items-center justify-between py-4">
         <Link to="/" className="group flex items-center gap-2" onClick={() => setOpen(false)}>
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-line bg-surface text-sm font-bold text-accent transition-all group-hover:shadow-[0_0_20px_rgba(10,247,235,0.35)]">
-            PX
+          <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-line bg-surface text-xs font-bold text-accent transition-all group-hover:shadow-[0_0_20px_rgba(10,247,235,0.35)]">
+            PXL
           </span>
           <span className="font-display text-lg font-semibold tracking-tight text-fg">
             PXLutions
