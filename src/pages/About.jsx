@@ -12,6 +12,15 @@ const values = [
   { icon: HeartHandshake, title: 'Honest partnership', text: "If something's not working, you'll hear it from us first." },
 ]
 
+const team = [
+  { name: 'Paul Jor', role: 'Founder & CEO', bio: 'Sets the vision and still reviews every architecture doc.' },
+  { name: 'Priya Nair', role: 'Co-Founder & CTO', bio: 'Owns engineering standards across every squad.' },
+  { name: 'Diego Santos', role: 'Head of Design', bio: "Leads the design system and every product's first pixel." },
+  { name: 'Lena Kowalski', role: 'Head of Engineering', bio: 'Keeps delivery predictable across concurrent builds.' },
+  { name: 'Marcus Webb', role: 'Lead AI Engineer', bio: 'Ships the LLM and automation features that stick.' },
+  { name: 'Sarah Chen', role: 'Head of Client Success', bio: 'Your first call after the contract is signed.' },
+]
+
 const timeline = [
   { year: '2017', text: 'PXLutions founded by three engineers tired of slow, risk-averse software shops.' },
   { year: '2019', text: 'Grew to a 12-person studio, shipped first enterprise cloud migration.' },
@@ -86,6 +95,32 @@ export default function About() {
               >
                 <span className="font-display text-xl font-semibold text-accent">{item.year}</span>
                 <p className="text-base leading-relaxed text-fg/85">{item.text}</p>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-12 md:py-20">
+        <div className="container-px">
+          <SectionHeading
+            eyebrow="Meet the team"
+            title="The people building your product"
+            description="A small group of senior engineers and designers, not a rotating cast of juniors."
+          />
+
+          <div className="mt-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {team.map((member, i) => (
+              <Reveal key={member.name} delay={i * 0.06} className="card p-7">
+                <div className="flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-cyan/40 to-cyan/5 text-sm font-semibold text-fg">
+                  {member.name
+                    .split(' ')
+                    .map((part) => part[0])
+                    .join('')}
+                </div>
+                <h3 className="mt-5 text-base font-semibold text-fg">{member.name}</h3>
+                <p className="text-sm text-accent">{member.role}</p>
+                <p className="mt-2 text-sm leading-relaxed text-mist">{member.bio}</p>
               </Reveal>
             ))}
           </div>
