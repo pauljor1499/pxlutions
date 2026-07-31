@@ -18,10 +18,10 @@ export default function ThemeToggle({ className = '' }) {
       <Sun size={13} className="absolute left-[7px] text-mist" />
       <Moon size={13} className="absolute right-[7px] text-mist" />
       <motion.span
-        layout
-        transition={{ type: 'spring', stiffness: 500, damping: 32 }}
+        initial={false}
+        animate={{ x: isDark ? 28 : 0 }}
+        transition={{ type: 'spring', stiffness: 500, damping: 45 }}
         className="relative z-10 flex h-7 w-7 items-center justify-center rounded-full bg-cyan text-black shadow-[0_0_12px_rgba(10,247,235,0.5)]"
-        style={{ marginLeft: isDark ? 'calc(100% - 1.75rem)' : '0' }}
       >
         {isDark ? <Moon size={14} /> : <Sun size={14} />}
       </motion.span>

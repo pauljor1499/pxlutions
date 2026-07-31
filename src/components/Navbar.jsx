@@ -1,5 +1,5 @@
-import { useEffect, useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { useEffect, useRef, useState } from 'react'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X, ArrowUpRight } from 'lucide-react'
 import ThemeToggle from './ThemeToggle'
@@ -14,6 +14,9 @@ const links = [
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const [pillRect, setPillRect] = useState(null)
+  const itemRefs = useRef({})
+  const { pathname } = useLocation()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12)
@@ -25,6 +28,16 @@ export default function Navbar() {
   useEffect(() => {
     setOpen(false)
   }, [])
+
+  useEffect(() => {
+    const measure = () => {
+      const el = itemRefs.current[pathname]
+      if (el) setPillRect({ left: el.offsetLeft, width: el.offsetWidth })
+    }
+    measure()
+    window.addEventListener('resize', measure)
+    return () => window.removeEventListener('resize', measure)
+  }, [pathname])
 
   return (
     <header
@@ -42,30 +55,30 @@ export default function Navbar() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-1 md:flex">
+        <nav className="relative hidden items-center gap-1 md:flex">
+          {pillRect && (
+            <motion.span
+              initial={false}
+              animate={{ x: pillRect.left, width: pillRect.width }}
+              transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
+              className="absolute inset-y-0 left-0 -z-10 rounded-full border border-cyan/30 bg-cyan/10"
+            />
+          )}
           {links.map((link) => (
             <NavLink
               key={link.to}
+              ref={(el) => {
+                itemRefs.current[link.to] = el
+              }}
               to={link.to}
               end={link.to === '/'}
               className={({ isActive }) =>
-                `relative rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                `rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                   isActive ? 'text-fg' : 'text-mist hover:text-fg'
                 }`
               }
             >
-              {({ isActive }) => (
-                <>
-                  {link.label}
-                  {isActive && (
-                    <motion.span
-                      layoutId="nav-pill"
-                      className="absolute inset-0 -z-10 rounded-full border border-cyan/30 bg-cyan/10"
-                      transition={{ type: 'spring', duration: 0.5 }}
-                    />
-                  )}
-                </>
-              )}
+              {link.label}
             </NavLink>
           ))}
         </nav>
