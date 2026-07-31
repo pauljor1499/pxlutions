@@ -42,7 +42,7 @@ export default function Home() {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="max-w-4xl text-4xl font-medium text-fg sm:text-5xl md:text-7xl md:leading-[1.05]"
           >
-            We build the <span className="text-gradient">digital products</span> your business runs on
+Where innovation turns <span className="text-gradient">pixels</span> into <span className="text-gradient">solutions</span>
           </motion.h1>
 
           <motion.p
