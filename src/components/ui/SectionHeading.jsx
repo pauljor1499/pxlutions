@@ -6,12 +6,12 @@ export default function SectionHeading({ eyebrow, title, description, align = 'c
   return (
     <Reveal className={`flex flex-col ${alignment} gap-4`}>
       {eyebrow && (
-        <span className="inline-flex items-center gap-2 rounded-full border border-line bg-white/[0.03] px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-cyan">
+        <span className="inline-flex items-center gap-2 rounded-full border border-line bg-fg/[0.06] px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-accent">
           <span className="h-1.5 w-1.5 rounded-full bg-cyan animate-pulse-glow" />
           {eyebrow}
         </span>
       )}
-      <h2 className="max-w-2xl text-3xl font-medium text-white md:text-[2.6rem] md:leading-[1.1]">
+      <h2 className="max-w-2xl text-3xl font-medium text-fg md:text-[2.6rem] md:leading-[1.1]">
         {title}
       </h2>
       {description && (

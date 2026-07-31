@@ -30,7 +30,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
-            className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-white/[0.03] px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-cyan"
+            className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-fg/[0.06] px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-accent"
           >
             <Sparkles size={13} />
             Digital engineering studio
@@ -40,7 +40,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="max-w-4xl text-4xl font-medium text-white sm:text-5xl md:text-7xl md:leading-[1.05]"
+            className="max-w-4xl text-4xl font-medium text-fg sm:text-5xl md:text-7xl md:leading-[1.05]"
           >
             We build the <span className="text-gradient">digital products</span> your business runs on
           </motion.h1>
@@ -91,12 +91,12 @@ export default function Home() {
                   to={`/services#${service.slug}`}
                   className="card glow-border group flex h-full flex-col gap-4 p-7 transition-colors hover:border-cyan/40"
                 >
-                  <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-line bg-white/[0.03] text-cyan transition-transform duration-300 group-hover:scale-110">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-xl border border-line bg-fg/[0.06] text-accent transition-transform duration-300 group-hover:scale-110">
                     <service.icon size={22} />
                   </div>
-                  <h3 className="text-lg font-semibold text-white">{service.title}</h3>
+                  <h3 className="text-lg font-semibold text-fg">{service.title}</h3>
                   <p className="flex-1 text-sm leading-relaxed text-mist">{service.summary}</p>
-                  <span className="inline-flex items-center gap-1 text-sm font-medium text-cyan opacity-0 transition-opacity group-hover:opacity-100">
+                  <span className="inline-flex items-center gap-1 text-sm font-medium text-accent opacity-0 transition-opacity group-hover:opacity-100">
                     Learn more <ArrowRight size={14} />
                   </span>
                 </Link>
@@ -107,7 +107,7 @@ export default function Home() {
       </section>
 
       {/* STATS */}
-      <section className="relative border-y border-line bg-surface/40 py-20">
+      <section className="relative border-y border-line bg-surface/70 py-20">
         <div className="container-px grid grid-cols-2 gap-10 md:grid-cols-4">
           <StatCounter value={120} suffix="+" label="Products shipped" />
           <StatCounter value={45} suffix="+" label="Clients worldwide" />
@@ -128,8 +128,8 @@ export default function Home() {
           <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-line bg-line md:grid-cols-4">
             {process.map((item, i) => (
               <Reveal key={item.step} delay={i * 0.08} className="bg-ink-soft p-8">
-                <span className="font-display text-sm font-semibold text-cyan">{item.step}</span>
-                <h3 className="mt-4 text-lg font-semibold text-white">{item.title}</h3>
+                <span className="font-display text-sm font-semibold text-accent">{item.step}</span>
+                <h3 className="mt-4 text-lg font-semibold text-fg">{item.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-mist">{item.text}</p>
               </Reveal>
             ))}
@@ -145,14 +145,14 @@ export default function Home() {
               className="pointer-events-none absolute -top-20 right-0 h-64 w-64 rounded-full opacity-20 blur-[90px]"
               style={{ background: 'radial-gradient(circle, #0af7eb, transparent 70%)' }}
             />
-            <p className="relative max-w-3xl text-xl font-medium leading-relaxed text-white md:text-2xl">
+            <p className="relative max-w-3xl text-xl font-medium leading-relaxed text-fg md:text-2xl">
               "PXLutions rebuilt our platform from the ground up in three months. Deploys went
               from a weekly ritual of dread to something we barely think about anymore."
             </p>
             <div className="relative mt-8 flex items-center gap-3">
               <div className="h-11 w-11 rounded-full bg-gradient-to-br from-cyan/40 to-cyan/5" />
               <div>
-                <p className="text-sm font-semibold text-white">Maria Santos</p>
+                <p className="text-sm font-semibold text-fg">Maria Santos</p>
                 <p className="text-xs text-mist">VP Engineering, Northline Retail</p>
               </div>
             </div>
@@ -169,7 +169,7 @@ export default function Home() {
               style={{ background: 'radial-gradient(circle at 50% 0%, #0af7eb, transparent 60%)' }}
             />
             <div className="relative">
-              <h2 className="mx-auto max-w-2xl text-3xl font-medium text-white md:text-5xl">
+              <h2 className="mx-auto max-w-2xl text-3xl font-medium text-fg md:text-5xl">
                 Have a product in mind? Let's ship it.
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-mist">

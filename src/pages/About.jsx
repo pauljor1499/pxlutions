@@ -26,12 +26,12 @@ export default function About() {
         <GradientBlobs />
         <div className="container-px relative z-10 flex flex-col items-center text-center">
           <Reveal>
-            <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-white/[0.03] px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-cyan">
+            <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-fg/[0.06] px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-accent">
               About PXLutions
             </span>
           </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="max-w-3xl text-4xl font-medium text-white md:text-6xl md:leading-[1.05]">
+            <h1 className="max-w-3xl text-4xl font-medium text-fg md:text-6xl md:leading-[1.05]">
               Engineers and designers building <span className="text-gradient">software that lasts</span>
             </h1>
           </Reveal>
@@ -44,7 +44,7 @@ export default function About() {
         </div>
       </section>
 
-      <section className="border-y border-line bg-surface/40 py-20">
+      <section className="border-y border-line bg-surface/70 py-20">
         <div className="container-px grid grid-cols-2 gap-10 md:grid-cols-4">
           <StatCounter value={120} suffix="+" label="Products shipped" />
           <StatCounter value={45} suffix="+" label="Clients worldwide" />
@@ -62,10 +62,10 @@ export default function About() {
           <div className="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
             {values.map((value, i) => (
               <Reveal key={value.title} delay={i * 0.06} className="card p-7">
-                <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-line bg-white/[0.03] text-cyan">
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl border border-line bg-fg/[0.06] text-accent">
                   <value.icon size={20} />
                 </div>
-                <h3 className="mt-5 text-base font-semibold text-white">{value.title}</h3>
+                <h3 className="mt-5 text-base font-semibold text-fg">{value.title}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-mist">{value.text}</p>
               </Reveal>
             ))}
@@ -84,8 +84,8 @@ export default function About() {
                 delay={i * 0.08}
                 className="grid grid-cols-[80px_1fr] gap-6 border-t border-line py-7 first:border-t-0 md:grid-cols-[120px_1fr]"
               >
-                <span className="font-display text-xl font-semibold text-cyan">{item.year}</span>
-                <p className="text-base leading-relaxed text-white/85">{item.text}</p>
+                <span className="font-display text-xl font-semibold text-accent">{item.year}</span>
+                <p className="text-base leading-relaxed text-fg/85">{item.text}</p>
               </Reveal>
             ))}
           </div>
@@ -100,7 +100,7 @@ export default function About() {
               style={{ background: 'radial-gradient(circle at 50% 0%, #0af7eb, transparent 60%)' }}
             />
             <div className="relative">
-              <h2 className="mx-auto max-w-2xl text-3xl font-medium text-white md:text-5xl">
+              <h2 className="mx-auto max-w-2xl text-3xl font-medium text-fg md:text-5xl">
                 Want to work with a team like ours?
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-mist">

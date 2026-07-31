@@ -9,6 +9,8 @@
   --color-cyan: #0af7eb;
   --color-cyan-dim: #0af7eb99;
   --color-mist: #9aa3ab;
+  --color-fg: #ffffff;
+  --color-accent: #0af7eb;
 
   --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-display: "Space Grotesk", "Inter", system-ui, sans-serif;
@@ -18,6 +20,24 @@
   --animate-float-slow: float 11s ease-in-out infinite;
   --animate-spin-slow: spin 14s linear infinite;
   --animate-pulse-glow: pulse-glow 3.2s ease-in-out infinite;
+}
+
+:root {
+  --color-body: #e7ecef;
+  --grid-line: rgba(255, 255, 255, 0.06);
+}
+
+:root[data-theme='light'] {
+  --color-ink: #e7ebee;
+  --color-ink-soft: #dbe0e5;
+  --color-surface: #ffffff;
+  --color-surface-2: #eef1f4;
+  --color-line: #c9d0d7;
+  --color-mist: #4f5964;
+  --color-fg: #0b0d10;
+  --color-accent: #057b74;
+  --color-body: #1b1f23;
+  --grid-line: rgba(10, 15, 20, 0.09);
 }
 
 @layer base {
@@ -32,8 +52,9 @@
   body {
     margin: 0;
     background: var(--color-ink);
-    color: #e7ecef;
+    color: var(--color-body);
     font-family: var(--font-sans);
+    transition: background-color 0.3s ease, color 0.3s ease;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -69,7 +90,7 @@
   }
 
   .text-gradient {
-    background: linear-gradient(120deg, #ffffff 0%, #ffffff 40%, var(--color-cyan) 100%);
+    background: linear-gradient(120deg, var(--color-fg) 0%, var(--color-fg) 40%, var(--color-cyan) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
@@ -84,11 +105,15 @@
   }
 
   .btn-outline {
-    @apply inline-flex items-center justify-center gap-2 rounded-full border border-line bg-white/[0.02] px-7 py-3.5 text-sm font-semibold text-white/90 backdrop-blur transition-all duration-300 ease-out hover:border-cyan/60 hover:text-cyan hover:scale-[1.03] active:scale-[0.98];
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-line bg-fg/[0.05] px-7 py-3.5 text-sm font-semibold text-fg/90 backdrop-blur transition-all duration-300 ease-out hover:border-cyan/60 hover:text-accent hover:scale-[1.03] active:scale-[0.98];
   }
 
   .card {
     @apply relative rounded-2xl border border-line bg-surface/60 backdrop-blur-sm;
+  }
+  :root[data-theme='light'] .card {
+    background-color: rgba(255, 255, 255, 0.96);
+    box-shadow: 0 1px 2px rgba(15, 23, 31, 0.04), 0 16px 40px -22px rgba(15, 23, 31, 0.22);
   }
 
   .glow-border {
@@ -123,8 +148,8 @@
 
   .grid-fade {
     background-image:
-      linear-gradient(to right, rgba(255, 255, 255, 0.06) 1px, transparent 1px),
-      linear-gradient(to bottom, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+      linear-gradient(to right, var(--grid-line) 1px, transparent 1px),
+      linear-gradient(to bottom, var(--grid-line) 1px, transparent 1px);
     background-size: 56px 56px;
     -webkit-mask-image: radial-gradient(ellipse 60% 55% at 50% 20%, black 40%, transparent 80%);
     mask-image: radial-gradient(ellipse 60% 55% at 50% 20%, black 40%, transparent 80%);

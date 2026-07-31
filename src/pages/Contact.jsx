@@ -47,12 +47,12 @@ export default function Contact() {
       <div className="container-px relative z-10">
         <div className="flex flex-col items-center text-center">
           <Reveal>
-            <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-white/[0.03] px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-cyan">
+            <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-fg/[0.06] px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-accent">
               Contact
             </span>
           </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="max-w-2xl text-4xl font-medium text-white md:text-6xl md:leading-[1.05]">
+            <h1 className="max-w-2xl text-4xl font-medium text-fg md:text-6xl md:leading-[1.05]">
               Let's talk about your <span className="text-gradient">next build</span>
             </h1>
           </Reveal>
@@ -67,20 +67,20 @@ export default function Contact() {
           <Reveal delay={0.1} className="flex flex-col gap-4">
             {info.map((item) => (
               <div key={item.label} className="card flex items-center gap-4 p-6">
-                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-line bg-white/[0.03] text-cyan">
+                <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl border border-line bg-fg/[0.06] text-accent">
                   <item.icon size={19} />
                 </div>
                 <div>
                   <p className="text-xs uppercase tracking-wider text-mist">{item.label}</p>
-                  <p className="text-sm font-medium text-white">{item.value}</p>
+                  <p className="text-sm font-medium text-fg">{item.value}</p>
                 </div>
               </div>
             ))}
 
             <div className="card p-6">
-              <p className="text-sm font-medium text-white">Prefer async?</p>
+              <p className="text-sm font-medium text-fg">Prefer async?</p>
               <p className="mt-2 text-sm leading-relaxed text-mist">
-                Send a project brief to <span className="text-cyan">hello@pxlutions.com</span> and
+                Send a project brief to <span className="text-accent">hello@pxlutions.com</span> and
                 we'll come back with a scoped proposal within 3 business days.
               </p>
             </div>
@@ -97,8 +97,8 @@ export default function Contact() {
                     exit={{ opacity: 0 }}
                     className="flex flex-col items-center justify-center gap-4 py-16 text-center"
                   >
-                    <CheckCircle2 size={44} className="text-cyan" />
-                    <h3 className="text-xl font-semibold text-white">Message sent</h3>
+                    <CheckCircle2 size={44} className="text-accent" />
+                    <h3 className="text-xl font-semibold text-fg">Message sent</h3>
                     <p className="max-w-sm text-sm text-mist">
                       Thanks for reaching out — we'll be in touch within one business day.
                     </p>
@@ -155,8 +155,8 @@ export default function Contact() {
                             onClick={() => setForm((f) => ({ ...f, budget: b }))}
                             className={`rounded-full border px-4 py-2 text-xs font-medium transition-colors ${
                               form.budget === b
-                                ? 'border-cyan/60 bg-cyan/10 text-cyan'
-                                : 'border-line text-mist hover:text-white'
+                                ? 'border-cyan/60 bg-cyan/10 text-accent'
+                                : 'border-line text-mist hover:text-fg'
                             }`}
                           >
                             {b}
@@ -174,7 +174,7 @@ export default function Contact() {
                         value={form.message}
                         onChange={update('message')}
                         placeholder="What are you building, and what does success look like?"
-                        className={`resize-none rounded-xl border bg-white/[0.02] px-4 py-3 text-sm text-white placeholder:text-white/30 outline-none transition-colors focus:border-cyan/60 ${
+                        className={`resize-none rounded-xl border bg-fg/[0.05] px-4 py-3 text-sm text-fg placeholder:text-fg/30 outline-none transition-colors focus:border-cyan/60 ${
                           errors.message ? 'border-red-400/60' : 'border-line'
                         }`}
                       />
@@ -209,7 +209,7 @@ function Field({ label, value, onChange, error, type = 'text', placeholder }) {
         value={value}
         onChange={onChange}
         placeholder={placeholder}
-        className={`rounded-xl border bg-white/[0.02] px-4 py-3 text-sm text-white placeholder:text-white/30 outline-none transition-colors focus:border-cyan/60 ${
+        className={`rounded-xl border bg-fg/[0.05] px-4 py-3 text-sm text-fg placeholder:text-fg/30 outline-none transition-colors focus:border-cyan/60 ${
           error ? 'border-red-400/60' : 'border-line'
         }`}
       />

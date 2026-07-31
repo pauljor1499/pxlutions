@@ -30,9 +30,9 @@ export default function StatCounter({ value, suffix = '', label }) {
       transition={{ duration: 0.5 }}
       className="flex flex-col gap-1"
     >
-      <div className="flex items-baseline gap-1 text-4xl font-semibold text-white md:text-5xl">
+      <div className="flex items-baseline gap-1 text-4xl font-semibold text-fg md:text-5xl">
         <span ref={nodeRef}>0</span>
-        <span className="text-cyan">{suffix}</span>
+        <span className="text-accent">{suffix}</span>
       </div>
       <p className="text-sm text-mist">{label}</p>
     </motion.div>

@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { AnimatePresence, motion } from 'framer-motion'
 import { Menu, X, ArrowUpRight } from 'lucide-react'
+import ThemeToggle from './ThemeToggle'
 
 const links = [
   { to: '/', label: 'Home' },
@@ -33,10 +34,10 @@ export default function Navbar() {
     >
       <div className="container-px flex h-20 items-center justify-between py-4">
         <Link to="/" className="group flex items-center gap-2" onClick={() => setOpen(false)}>
-          <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-line bg-surface text-sm font-bold text-cyan transition-all group-hover:shadow-[0_0_20px_rgba(10,247,235,0.35)]">
+          <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-line bg-surface text-sm font-bold text-accent transition-all group-hover:shadow-[0_0_20px_rgba(10,247,235,0.35)]">
             PX
           </span>
-          <span className="font-display text-lg font-semibold tracking-tight text-white">
+          <span className="font-display text-lg font-semibold tracking-tight text-fg">
             PXLutions
           </span>
         </Link>
@@ -49,7 +50,7 @@ export default function Navbar() {
               end={link.to === '/'}
               className={({ isActive }) =>
                 `relative rounded-full px-4 py-2 text-sm font-medium transition-colors ${
-                  isActive ? 'text-white' : 'text-mist hover:text-white'
+                  isActive ? 'text-fg' : 'text-mist hover:text-fg'
                 }`
               }
             >
@@ -69,20 +70,24 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <div className="hidden md:block">
-          <Link to="/contact" className="btn-primary">
-            Start a project
-            <ArrowUpRight size={16} />
-          </Link>
-        </div>
+        <div className="flex items-center gap-3">
+          <ThemeToggle />
 
-        <button
-          className="flex h-10 w-10 items-center justify-center rounded-lg border border-line text-white md:hidden"
-          onClick={() => setOpen((v) => !v)}
-          aria-label="Toggle menu"
-        >
-          {open ? <X size={18} /> : <Menu size={18} />}
-        </button>
+          <div className="hidden md:block">
+            <Link to="/contact" className="btn-primary">
+              Start a project
+              <ArrowUpRight size={16} />
+            </Link>
+          </div>
+
+          <button
+            className="flex h-10 w-10 items-center justify-center rounded-lg border border-line text-fg md:hidden"
+            onClick={() => setOpen((v) => !v)}
+            aria-label="Toggle menu"
+          >
+            {open ? <X size={18} /> : <Menu size={18} />}
+          </button>
+        </div>
       </div>
 
       <AnimatePresence>
@@ -103,7 +108,7 @@ export default function Navbar() {
                   onClick={() => setOpen(false)}
                   className={({ isActive }) =>
                     `rounded-lg px-4 py-3 text-base font-medium ${
-                      isActive ? 'bg-white/5 text-white' : 'text-mist'
+                      isActive ? 'bg-fg/5 text-fg' : 'text-mist'
                     }`
                   }
                 >

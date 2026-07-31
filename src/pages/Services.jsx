@@ -12,12 +12,12 @@ export default function Services() {
         <GradientBlobs />
         <div className="container-px relative z-10 flex flex-col items-center text-center">
           <Reveal>
-            <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-white/[0.03] px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-cyan">
+            <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-line bg-fg/[0.06] px-4 py-1.5 text-xs font-medium uppercase tracking-[0.18em] text-accent">
               Services
             </span>
           </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="max-w-3xl text-4xl font-medium text-white md:text-6xl md:leading-[1.05]">
+            <h1 className="max-w-3xl text-4xl font-medium text-fg md:text-6xl md:leading-[1.05]">
               Every capability your <span className="text-gradient">product</span> needs to launch and scale
             </h1>
           </Reveal>
@@ -39,17 +39,17 @@ export default function Services() {
               className="grid scroll-mt-28 gap-10 md:grid-cols-2 md:items-center"
             >
               <Reveal className={i % 2 === 1 ? 'md:order-2' : ''}>
-                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-line bg-white/[0.03] text-cyan">
+                <div className="flex h-14 w-14 items-center justify-center rounded-2xl border border-line bg-fg/[0.06] text-accent">
                   <service.icon size={26} />
                 </div>
-                <h2 className="mt-6 text-2xl font-semibold text-white md:text-3xl">
+                <h2 className="mt-6 text-2xl font-semibold text-fg md:text-3xl">
                   {service.title}
                 </h2>
                 <p className="mt-4 text-base leading-relaxed text-mist">{service.details}</p>
                 <ul className="mt-6 flex flex-col gap-3">
                   {service.points.map((point) => (
-                    <li key={point} className="flex items-center gap-3 text-sm text-white/85">
-                      <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-cyan/10 text-cyan">
+                    <li key={point} className="flex items-center gap-3 text-sm text-fg/85">
+                      <span className="flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-cyan/10 text-accent">
                         <Check size={12} />
                       </span>
                       {point}
@@ -58,7 +58,7 @@ export default function Services() {
                 </ul>
                 <Link
                   to="/contact"
-                  className="mt-8 inline-flex items-center gap-1 text-sm font-semibold text-cyan hover:underline"
+                  className="mt-8 inline-flex items-center gap-1 text-sm font-semibold text-accent hover:underline"
                 >
                   Discuss this service <ArrowUpRight size={15} />
                 </Link>
@@ -73,7 +73,7 @@ export default function Services() {
                         'radial-gradient(circle at 30% 20%, rgba(10,247,235,0.18), transparent 60%)',
                     }}
                   />
-                  <service.icon size={96} className="relative text-cyan/70" strokeWidth={1} />
+                  <service.icon size={96} className="relative text-accent/70" strokeWidth={1} />
                 </div>
               </Reveal>
             </div>
@@ -89,7 +89,7 @@ export default function Services() {
               style={{ background: 'radial-gradient(circle at 50% 0%, #0af7eb, transparent 60%)' }}
             />
             <div className="relative">
-              <h2 className="mx-auto max-w-2xl text-3xl font-medium text-white md:text-5xl">
+              <h2 className="mx-auto max-w-2xl text-3xl font-medium text-fg md:text-5xl">
                 Not sure which service fits?
               </h2>
               <p className="mx-auto mt-4 max-w-xl text-mist">

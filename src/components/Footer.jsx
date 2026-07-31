@@ -45,10 +45,10 @@ export default function Footer() {
       <div className="container-px grid gap-12 py-16 md:grid-cols-[1.4fr_1fr_1fr]">
         <div className="flex flex-col gap-4">
           <Link to="/" className="flex items-center gap-2">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-line bg-surface text-sm font-bold text-cyan">
+            <span className="flex h-9 w-9 items-center justify-center rounded-lg border border-line bg-surface text-sm font-bold text-accent">
               PX
             </span>
-            <span className="font-display text-lg font-semibold text-white">PXLutions</span>
+            <span className="font-display text-lg font-semibold text-fg">PXLutions</span>
           </Link>
           <p className="max-w-sm text-sm leading-relaxed text-mist">
             A software company designing and engineering digital products — web, mobile, cloud,
@@ -59,7 +59,7 @@ export default function Footer() {
               <a
                 key={i}
                 href="#"
-                className="flex h-9 w-9 items-center justify-center rounded-lg border border-line text-mist transition-all hover:border-cyan/50 hover:text-cyan"
+                className="flex h-9 w-9 items-center justify-center rounded-lg border border-line text-mist transition-all hover:border-cyan/50 hover:text-accent"
                 aria-label="social link"
               >
                 <Icon width={16} height={16} />
@@ -70,7 +70,7 @@ export default function Footer() {
 
         {columns.map((col) => (
           <div key={col.title} className="flex flex-col gap-3">
-            <h4 className="text-sm font-semibold uppercase tracking-wider text-white/80">
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-fg/80">
               {col.title}
             </h4>
             <ul className="flex flex-col gap-2.5">
@@ -78,7 +78,7 @@ export default function Footer() {
                 <li key={link.label}>
                   <Link
                     to={link.to}
-                    className="text-sm text-mist transition-colors hover:text-cyan"
+                    className="text-sm text-mist transition-colors hover:text-accent"
                   >
                     {link.label}
                   </Link>
@@ -91,7 +91,7 @@ export default function Footer() {
 
       <div className="container-px flex flex-col items-center justify-between gap-4 border-t border-line py-6 text-xs text-mist md:flex-row">
         <p>© {new Date().getFullYear()} PXLutions. All rights reserved.</p>
-        <Link to="/contact" className="inline-flex items-center gap-1 text-cyan hover:underline">
+        <Link to="/contact" className="inline-flex items-center gap-1 text-accent hover:underline">
           Let's build something <ArrowUpRight size={14} />
         </Link>
       </div>
